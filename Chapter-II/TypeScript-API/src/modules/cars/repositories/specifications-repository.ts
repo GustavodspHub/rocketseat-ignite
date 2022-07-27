@@ -1,8 +1,8 @@
-import { Specification } from '../model/Specification';
+import { Specification } from '../model/specification';
 import {
     ICreateSpecificationDTO,
     ISpecificationsRepository
-} from './iSpecification-repository'
+} from './implementations/iSpecification-repository'
 
 export class SpecificationsRepository implements ISpecificationsRepository {
     private specifications: Specification[]
@@ -10,6 +10,8 @@ export class SpecificationsRepository implements ISpecificationsRepository {
     constructor(){
         this.specifications = []
     }
+
+    
 
     create({ name, description }: ICreateSpecificationDTO): void {
         const specification = new Specification();
